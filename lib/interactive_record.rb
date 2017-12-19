@@ -54,8 +54,8 @@ class InteractiveRecord
     end
 
     def self.find_by(args)
-      col = args.keys.map(&:to_s).join(', ')
+      col = args.keys.map(&:to_s)
       val = args.values.map(&:to_s).join(', ')
-      sql = "select * from #{self.table_name} where"
+      sql = "select * from #{self.table_name} where #{col}"
     end
 end
