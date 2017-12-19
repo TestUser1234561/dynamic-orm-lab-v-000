@@ -63,5 +63,6 @@ class InteractiveRecord
         str = "#{val.to_s} = #{eq}"
       end
       sql = "select * from #{self.table_name} where #{col.join(" and ")}"
+      DB[:conn].execute(sql)
     end
 end
