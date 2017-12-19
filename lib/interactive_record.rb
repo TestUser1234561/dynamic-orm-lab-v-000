@@ -1,6 +1,10 @@
 require_relative "../config/environment.rb"
 require 'active_support/inflector'
 
+def is_number? string
+  true if Float(string) rescue false
+end
+
 class InteractiveRecord
 
     def self.table_name
