@@ -54,7 +54,7 @@ class InteractiveRecord
     end
 
     def self.find_by(args)
-      p col = args.keys.map do |val|
+      col = args.keys.map do |val|
         str = "#{val.to_s} = " + is_number?(args[val].to_s) ? args[val].to_s : "'#{args[val].to_s}'"
       end
       sql = "select * from #{self.table_name} where #{col}"
