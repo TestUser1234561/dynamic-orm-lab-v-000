@@ -57,6 +57,7 @@ class InteractiveRecord
       col = args.keys.map do |val|
         str = "#{val.to_s} = " + is_number?(args[val].to_s) ? args[val].to_s : "'#{args[val].to_s}'"
       end
+      p col
       sql = "select * from #{self.table_name} where #{col}"
     end
 end
