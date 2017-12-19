@@ -62,6 +62,6 @@ class InteractiveRecord
         eq = is_number?(args[val].to_s) ? args[val].to_s : "'#{args[val].to_s}'"
         str = "#{val.to_s} = #{eq}"
       end
-      sql = "select * from #{self.table_name} where #{col}"
+      sql = "select * from #{self.table_name} where #{col.join(" and ")}"
     end
 end
